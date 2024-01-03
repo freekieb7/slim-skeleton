@@ -1,0 +1,13 @@
+version: "3.8"
+name: "slim_skeleton"
+services:
+  app:
+      build:
+        context: ../
+        dockerfile: build/dev.Dockerfile
+      working_dir: /var/www
+      volumes:
+        - ../:/var/www
+      command: php -S 0.0.0.0:8080 -t public
+      ports:
+        - "8080:8080"
